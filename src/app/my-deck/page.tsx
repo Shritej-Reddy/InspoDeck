@@ -21,7 +21,7 @@ export default function MyDeckPage() {
   const savedItems = allInspo.filter((item) => savedIds.includes(item.id));
 
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans px-4 sm:px-6 md:px-16 py-20 space-y-16 max-w-6xl mx-auto">
+    <main className="min-h-screen bg-background text-foreground font-sans pt-24 px-4 sm:px-6 md:px-16 py-20 space-y-16 max-w-6xl mx-auto">
       <section className="text-center space-y-4">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
           <span className="text-[#F4631E]">My Deck</span>
