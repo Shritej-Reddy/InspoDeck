@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
+import Cursor from "@/components/Cursor";
+import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/Navbar";
+import CircularScrollProgress from "@/components/CircularScrollProgress";
+import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -23,11 +29,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <CircularScrollProgress />
+          <Cursor />
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster position="bottom-right" />
+        </ThemeProvider>
       </body>
     </html>
   );

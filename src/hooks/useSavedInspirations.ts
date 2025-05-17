@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 export function useSavedInspirations() {
   const [savedIds, setSavedIds] = useState<string[]>([]);
@@ -10,15 +11,25 @@ export function useSavedInspirations() {
     if (fromStorage) {
       setSavedIds(JSON.parse(fromStorage));
     }
-  }, []);  
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem("saved-inspirations", JSON.stringify(savedIds));
+    localStorage.setItem('saved-inspirations', JSON.stringify(savedIds));
   }, [savedIds]);
 
-  const toggleSave = (id: string) => {
-    setSavedIds((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+  const toggleSave = (id: string, title?: string) => {
+    const isAlreadySaved = savedIds.includes(id);
+
+    const updated = isAlreadySaved
+      ? savedIds.filter((i) => i !== id)
+      : [...savedIds, id];
+
+    setSavedIds(updated);
+
+    toast.success(
+      isAlreadySaved
+        ? `Removed "${title}" from My Deck`
+        : `Saved "${title}" to My Deck`
     );
   };
 
