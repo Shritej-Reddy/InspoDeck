@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import classNames from 'classnames';
+import { useState } from "react";
+import classNames from "classnames";
 
-const allTags = ['UI', 'UX', 'Cards', 'Minimal', 'Typography', 'Dashboard'];
+const allTags = ["UI", "UX", "Cards", "Minimal", "Typography", "Dashboard"];
 
-export default function FilterBar({ onFilter }: { onFilter: (tags: string[]) => void }) {
+export default function FilterBar({
+  onFilter,
+}: {
+  onFilter: (tags: string[]) => void;
+}) {
   const [active, setActive] = useState<string[]>([]);
 
   const toggleTag = (tag: string) => {
@@ -24,10 +28,10 @@ export default function FilterBar({ onFilter }: { onFilter: (tags: string[]) => 
           key={tag}
           onClick={() => toggleTag(tag)}
           className={classNames(
-            'px-3 py-1 rounded-full border text-sm transition',
+            "px-3 py-1 rounded-full border text-sm transition",
             active.includes(tag)
-              ? 'bg-[#309898]/20 border-[#309898] text-[#309898]'
-              : 'border-muted text-muted-foreground hover:border-foreground'
+              ? "bg-[#309898]/20 border-[#309898] text-[#309898]"
+              : "border-muted text-muted-foreground hover:border-foreground"
           )}
         >
           {tag}

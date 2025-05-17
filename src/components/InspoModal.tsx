@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { Inspiration } from '@/lib/data';
-import { X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { Inspiration } from "@/lib/data";
+import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function InspoModal({
   open,
