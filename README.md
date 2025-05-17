@@ -4,7 +4,7 @@ A curated visual inspiration board built using Dribbble-style design shots. Brow
 
 ## 🌐 Live Demo
 
-[https://inspodeck.vercel.app](https://inspodeck.vercel.app)
+[https://inspo-deck.vercel.app/](https://inspo-deck.vercel.app/)
 
 ## ✨ Features
 
