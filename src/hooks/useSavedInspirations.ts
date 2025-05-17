@@ -6,11 +6,11 @@ export function useSavedInspirations() {
   const [savedIds, setSavedIds] = useState<string[]>([]);
 
   useEffect(() => {
-    const fromStorage = localStorage.getItem("saved-inspirations");
+    const fromStorage = localStorage.getItem('saved-inspirations');
     if (fromStorage) {
       setSavedIds(JSON.parse(fromStorage));
     }
-  }, []);
+  }, []);  
 
   useEffect(() => {
     localStorage.setItem("saved-inspirations", JSON.stringify(savedIds));
