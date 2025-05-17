@@ -24,10 +24,16 @@ export default function MobileNav() {
 
       {/* Fullscreen Overlay */}
       {open && (
-        <div className="fixed inset-0 z-[9998] bg-background text-foreground flex flex-col items-center justify-center gap-8 text-xl">
-          <Link href="/" onClick={closeMenu}>Home</Link>
-          <Link href="/about" onClick={closeMenu}>About</Link>
-          <Link href="/contact" onClick={closeMenu}>Contact</Link>
+        <div className="fixed inset-0 z-[9998] bg-background text-foreground flex flex-col items-center justify-center gap-8 text-xl transition-all">
+          <Link href="/" onClick={closeMenu} className="hover:text-[#F4631E] transition">
+            Home
+          </Link>
+          <Link href="/my-deck" onClick={closeMenu} className="hover:text-[#F4631E] transition">
+            My Deck
+          </Link>
+          <Link href="/contact" onClick={closeMenu} className="hover:text-[#F4631E] transition">
+            Contact
+          </Link>
           <ThemeToggle />
         </div>
       )}

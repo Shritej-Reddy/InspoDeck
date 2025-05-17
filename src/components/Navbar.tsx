@@ -12,11 +12,11 @@ export default function Navbar() {
 
       {/* Desktop Links */}
       <nav className="hidden md:flex gap-6 items-center text-muted-foreground">
-        <Link href="/about" className="hover:text-foreground transition">
-          About
+        <Link href="/" className="hover:text-foreground transition">
+          Home
         </Link>
-        <Link href="/contact" className="hover:text-foreground transition">
-          Contact
+        <Link href="/my-deck" className="hover:text-foreground transition">
+          My Deck
         </Link>
         <ThemeToggle />
       </nav>
